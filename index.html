@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ethan Haskell — Cybersecurity &amp; Network Systems</title>
+<meta name="description" content="Portfolio of Ethan Haskell, a cybersecurity student at Bowie State University specializing in systems administration, networking, and virtualization.">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230f1b2d%22/><circle cx=%2250%22 cy=%2250%22 r=%2010%22 fill=%22%23c98a3e%22/></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============ icon sprite ============ -->
+<svg style="display:none">
+  <symbol id="icon-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="8 6 3 12 8 18"/><polyline points="16 6 21 12 16 18"/>
+  </symbol>
+  <symbol id="icon-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/>
+  </symbol>
+  <symbol id="icon-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.5 21 3 13.5 3 4.3c0-.6.4-1 1-1H7.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8z"/>
+  </symbol>
+  <symbol id="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+    <line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/>
+  </symbol>
+  <symbol id="icon-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="21" y1="3" x2="10" y2="14"/><polygon points="21 3 14 21 10 14 3 10 21 3"/>
+  </symbol>
+  <symbol id="icon-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 11.5a8.4 8.4 0 0 1-8.4 8.4 8.5 8.5 0 0 1-3.9-.9L3 20l1.1-4.4A8.4 8.4 0 1 1 21 11.5z"/>
+  </symbol>
+  <symbol id="icon-arrow-diag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="7" y1="17" x2="17" y2="7"/><polyline points="8 7 17 7 17 16"/>
+  </symbol>
+</svg>
+
+<!-- ============ nav ============ -->
+<header class="nav">
+  <div class="wrap">
+    <a href="#home" class="nav-mark"><span class="dot"></span> cyberskell</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#resume">Résumé</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ============ hero ============ -->
+<section id="home" class="hero">
+  <div class="grid-tex"></div>
+  <div class="wrap">
+    <div>
+      <span class="kicker">Completing a B.S. in Cybersecurity at Bowie State University</span>
+      <h1>I build infrastructure that quietly keeps working.</h1>
+      <p class="lede">
+        I'm Ethan — a systems &amp; networking student who spends as much time in a home lab as in
+        the classroom. I'm an Eagle Scout known for reliability, professionalism, and clear
+        communication, and a proud member of the BDPA Baltimore chapter. My work spans
+        front-end and back-end development, virtualization, cloud computing, and a range of
+        operating systems.
+      </p>
+      <div class="btn-row">
+        <a href="#resume" class="btn btn-primary">View résumé</a>
+        <a href="#contact" class="btn btn-ghost">Get in touch</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>6-node</strong><span>Raspberry Pi HPC cluster</span></div>
+        <div><strong>2023–Present</strong><span>BDPA Baltimore member</span></div>
+        <div><strong>CompTIA</strong><span>Network+ &amp; Security+, in progress</span></div>
+      </div>
+    </div>
+
+    <svg class="topo" viewBox="0 0 480 420" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path class="link" d="M240 70 L240 130" />
+      <path class="link" d="M240 185 L240 225" />
+      <path class="link" d="M240 280 L85 340" />
+      <path class="link" d="M240 280 L240 340" />
+      <path class="link" d="M240 280 L395 340" />
+
+      <g class="node-group" style="animation-delay:.15s">
+        <rect class="node-box" x="185" y="20" width="110" height="50" rx="4"/>
+        <g transform="translate(205,33)">
+          <circle cx="12" cy="12" r="10" fill="none" stroke="var(--amber-bright)" stroke-width="1.4"/>
+          <path d="M2 12h20M12 2c3 3 3 17 0 20M12 2c-3 3-3 17 0 20" fill="none" stroke="var(--amber-bright)" stroke-width="1.2"/>
+        </g>
+        <text class="node-label" x="240" y="90" text-anchor="middle">Internet</text>
+      </g>
+
+      <g class="node-group" style="animation-delay:.35s">
+        <rect class="node-box" x="175" y="130" width="130" height="55" rx="4"/>
+        <g transform="translate(215,145)" class="node-icon" fill="none" stroke-width="1.4">
+          <path d="M12 2l9 4v6c0 5.5-3.8 9.7-9 11-5.2-1.3-9-5.5-9-11V6z"/>
+        </g>
+        <text class="node-label" x="240" y="205" text-anchor="middle">Firewall</text>
+      </g>
+
+      <g class="node-group" style="animation-delay:.55s">
+        <rect class="node-box" x="180" y="225" width="120" height="55" rx="4"/>
+        <g transform="translate(218,239)" class="node-icon" fill="none" stroke-width="1.4">
+          <rect x="0" y="6" width="24" height="8" rx="2"/>
+          <circle cx="5" cy="10" r="1.2" fill="var(--amber-bright)" stroke="none"/>
+          <path d="M12 2v4M12 22v-4" />
+        </g>
+        <text class="node-label" x="240" y="300" text-anchor="middle">Router</text>
+      </g>
+
+      <g class="node-group" style="animation-delay:.75s">
+        <rect class="node-box" x="15" y="340" width="140" height="62" rx="4"/>
+        <g transform="translate(50,352)" class="node-icon" fill="none" stroke-width="1.4">
+          <rect x="0" y="0" width="20" height="7" rx="1.5"/>
+          <rect x="0" y="10" width="20" height="7" rx="1.5"/>
+          <circle cx="4" cy="3.5" r="0.8" fill="var(--amber-bright)" stroke="none"/>
+          <circle cx="4" cy="13.5" r="0.8" fill="var(--amber-bright)" stroke="none"/>
+        </g>
+        <text class="node-label" x="85" y="392" text-anchor="middle">Proxmox host</text>
+      </g>
+
+      <g class="node-group" style="animation-delay:.9s">
+        <rect class="node-box" x="170" y="340" width="140" height="62" rx="4"/>
+        <g transform="translate(228,352)" class="node-icon" fill="none" stroke-width="1.4">
+          <circle cx="12" cy="10" r="9"/>
+          <path d="M3 10h18M12 1c3 3 3 15 0 18M12 1c-3 3-3 15 0 18" />
+        </g>
+        <text class="node-label" x="240" y="392" text-anchor="middle">DNS · VPN</text>
+      </g>
+
+      <g class="node-group" style="animation-delay:1.05s">
+        <rect class="node-box" x="325" y="340" width="140" height="62" rx="4"/>
+        <g transform="translate(378,353)" class="node-icon" fill="none" stroke-width="1.4">
+          <rect x="0" y="0" width="18" height="13" rx="1.5"/>
+          <line x1="4" y1="17" x2="14" y2="17"/>
+        </g>
+        <text class="node-label" x="395" y="392" text-anchor="middle">Workstation</text>
+      </g>
+
+      <circle class="pulse" cx="240" cy="100" r="3" style="animation-delay:.4s"/>
+      <circle class="pulse" cx="240" cy="205" r="3" style="animation-delay:.9s"/>
+      <circle class="pulse" cx="163" cy="310" r="3" style="animation-delay:1.4s"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ============ about ============ -->
+<section id="about" class="section-light">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Grounded in hands-on systems work</h2>
+      <p>Coursework gives me the theory; a home lab I've run for years gives me the muscle memory — deploying, breaking, and fixing real services on real hardware.</p>
+    </div>
+
+    <div class="about-grid">
+      <div>
+        <ul class="timeline">
+          <li>
+            <span class="t-date">Expected Dec. 2026</span>
+            <h4>B.S. Computer Technology in Cybersecurity</h4>
+            <p>Bowie State University, Maryland — GPA 3.2/4.0. Coursework in client operating systems, Windows Server administration, PC architecture, computer networking, network security foundations, internet technology, and database development.</p>
+          </li>
+          <li>
+            <span class="t-date">In progress</span>
+            <h4>CompTIA Network+ &amp; Security+</h4>
+            <p>Building toward both certifications in networking fundamentals and security principles alongside coursework.</p>
+          </li>
+          <li>
+            <span class="t-date">Eagle Scout</span>
+            <h4>Boy Scouts of America</h4>
+            <p>Led and documented a multi-volunteer service project from planning through completion.</p>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="spec-grid">
+          <div class="spec-plate">
+            <h4>Systems &amp; support</h4>
+            <p>Windows, Windows Server, Linux (Ubuntu), Active Directory administration, account &amp; access management, hardware/software troubleshooting, PC architecture, system maintenance.</p>
+          </div>
+          <div class="spec-plate">
+            <h4>Virtualization &amp; cloud</h4>
+            <p>Proxmox, Docker, VMware, VirtualBox, Azure.</p>
+          </div>
+          <div class="spec-plate">
+            <h4>Networking</h4>
+            <p>TCP/IP, DNS, DHCP, VPN (WireGuard), switch &amp; router configuration, firewall configuration, network monitoring tools, wireless networking, connectivity troubleshooting.</p>
+          </div>
+          <div class="spec-plate">
+            <h4>Tools &amp; productivity</h4>
+            <p>Excel, Power BI, Git, command-line utilities, Python, SQL, Java, IT ticketing/helpdesk systems.</p>
+          </div>
+          <div class="spec-plate">
+            <h4>Professional</h4>
+            <p>Customer support &amp; service-desk best practices, technical documentation, cross-team collaboration, issue escalation and follow-through.</p>
+          </div>
+        </div>
+
+        <div class="leader-strip">
+          <h3>Leadership &amp; community</h3>
+          <ul class="leader-list">
+            <li>BDPA Baltimore Metro — Charter Member (2023–Present)</li>
+            <li>BSU Collegiate Chapter — Project Coordinator (2025)</li>
+            <li>HSCC — Election Chair (2025) &amp; Student Volunteer (2023–Present)</li>
+            <li>Eagle Scout — led a multi-volunteer community service project</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ projects ============ -->
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Selected work</h2>
+      <p>Infrastructure I've built and maintained, plus a full-stack project delivered for a real client.</p>
+    </div>
+
+    <div class="proj-grid">
+      <article class="proj-card">
+        <div class="proj-top"><h3>IT Operations Intern — Supreme Court of the United States</h3></div>
+        <div class="proj-tags">
+          <span class="tag">Network Monitoring</span><span class="tag">Ticketing Systems</span><span class="tag">Switch/Router Config</span><span class="tag">Customer Support</span>
+        </div>
+        <ul>
+          <li>Supported the Network Administration Group (NAG) and Workstation Administration Group (WAG), gaining hands-on exposure to enterprise networking, system monitoring, and end-user support.</li>
+          <li>Split time between proactive network monitoring and operational tasks — including switch and router configuration — within NAG, and direct, user-facing technical support within WAG.</li>
+          <li>Tracked and resolved issues through IT ticketing systems, applying customer service best practices across both groups.</li>
+        </ul>
+        <span class="proj-link" style="border-top:1px solid var(--line); opacity:.7; cursor:default;">
+          Federal internship — details not publicly shareable
+        </span>
+      </article>
+
+      <article class="proj-card">
+        <div class="proj-top"><h3>Personal home lab</h3></div>
+        <div class="proj-tags">
+          <span class="tag">Proxmox</span><span class="tag">Docker</span><span class="tag">WireGuard</span><span class="tag">DNS</span>
+        </div>
+        <ul>
+          <li>Built and maintain a multi-service server environment on Proxmox, deploying and supporting Docker-containerized apps — installs, updates, backups, and outage diagnosis.</li>
+          <li>Run a personal DNS server to monitor traffic and block unwanted applications at the network level; configured firewall rules and secure remote access via WireGuard VPN.</li>
+        </ul>
+        <a class="proj-link" href="https://github.com/cyberskell" target="_blank" rel="noopener">
+          <svg width="15" height="15"><use href="#icon-code"/></svg> View on GitHub
+        </a>
+      </article>
+
+      <article class="proj-card">
+        <div class="proj-top"><h3>Self-hosted web server</h3></div>
+        <div class="proj-tags">
+          <span class="tag">Ubuntu Server</span><span class="tag">Apache</span><span class="tag">DNS</span><span class="tag">Access Control</span>
+        </div>
+        <ul>
+          <li>Deployed an Ubuntu Server running the Apache HTTP Server, configured with a custom domain and IP-based access control to restrict incoming connections.</li>
+          <li>Set up Apache virtual hosts and DNS routing, then hardened the server against unauthorized access with firewall rules on top of Apache's own access controls; perform ongoing maintenance and patching.</li>
+        </ul>
+        <a class="proj-link" href="https://github.com/cyberskell/cyberskell-web-dns-server" target="_blank" rel="noopener">
+          <svg width="15" height="15"><use href="#icon-code"/></svg> View on GitHub
+        </a>
+      </article>
+
+      <article class="proj-card">
+        <div class="proj-top"><h3>Mock supercomputer / virtual cluster</h3></div>
+        <div class="proj-tags">
+          <span class="tag">Raspberry Pi</span><span class="tag">Clustering</span><span class="tag">Networking</span>
+        </div>
+        <ul>
+          <li>Built a 6-node Raspberry Pi cluster wired over a dedicated switch, configured to emulate a small HPC environment with static IP addressing and SSH-based cluster management.</li>
+          <li>Diagnosed connectivity and configuration issues across the networked systems, from physical cabling to service-level configuration.</li>
+        </ul>
+        <a class="proj-link" href="https://github.com/cyberskell" target="_blank" rel="noopener">
+          <svg width="15" height="15"><use href="#icon-code"/></svg> View on GitHub
+        </a>
+      </article>
+
+      <article class="proj-card">
+        <div class="proj-top"><h3>City of Baltimore reporting dashboard</h3></div>
+        <div class="proj-tags">
+          <span class="tag">Full-Stack</span><span class="tag">SQL</span><span class="tag">Dashboarding</span>
+        </div>
+        <ul>
+          <li>Led full-stack development of an interactive dashboard that automated previously manual daily data updates for the Office of the Comptroller, reducing repetitive reporting work.</li>
+          <li>Worked directly with non-technical staff to translate their needs into technical requirements, and documented the build for staff handoff and training.</li>
+        </ul>
+        <span class="proj-link" style="border-top:1px solid var(--line); opacity:.7; cursor:default;">
+          Internal city project — code not publicly hosted
+        </span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ resume ============ -->
+<section id="resume" class="section-light">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Résumé</h2>
+      <p>The full one-page breakdown of my education, skills, and experience — view it inline or take a copy with you.</p>
+    </div>
+
+    <div class="resume-grid">
+      <div class="resume-frame">
+        <embed src="assets/Ethan_Haskell_Resume.pdf" type="application/pdf" />
+      </div>
+
+      <div class="resume-side">
+        <h3>Take a copy</h3>
+        <p>Available as a formatted PDF or an editable Word document.</p>
+        <div class="btn-row" style="margin-bottom:4px;">
+          <a class="btn btn-primary" href="assets/Ethan_Haskell_Resume.pdf" download>Download PDF</a>
+          <a class="btn btn-ghost" href="assets/Ethan_Haskell_Resume.docx" download>Download .docx</a>
+        </div>
+
+        <div class="resume-qr">
+          <img src="assets/qr-code.png" alt="QR code linking to cyberskell.com" width="64" height="64">
+          <span>Scan to pull up this site on your phone — the same code is printed on the résumé header.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ contact ============ -->
+<section id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Let's talk</h2>
+      <p>Open to internships, co-ops, and entry-level roles in systems administration, networking, or cybersecurity.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Direct contact</h3>
+        <ul class="contact-list">
+          <li><svg><use href="#icon-mail"/></svg><a href="mailto:ehas2026@gmail.com">ehas2026@gmail.com</a></li>
+          <li><svg><use href="#icon-phone"/></svg><a href="tel:+14109407116">410-940-7116</a></li>
+          <li><svg><use href="#icon-code"/></svg><a href="https://github.com/cyberskell" target="_blank" rel="noopener">github.com/cyberskell</a></li>
+          <li><svg><use href="#icon-arrow-diag"/></svg><a href="https://linkedin.com/in/ethan-h-2745282a6" target="_blank" rel="noopener">linkedin.com/in/ethan-h-2745282a6</a></li>
+        </ul>
+        <h3>Based in</h3>
+        <p style="margin:0; font-size:.95rem;">Ellicott City, Maryland</p>
+      </div>
+
+      <form class="contact-form" id="contactForm">
+        <div class="field">
+          <label for="cf-name">Name</label>
+          <input id="cf-name" name="name" type="text" required autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="cf-email">Email</label>
+          <input id="cf-email" name="email" type="email" required autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="cf-message">Message</label>
+          <textarea id="cf-message" name="message" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send message</button>
+        <p class="form-note">This opens your email client with the message pre-filled and addressed to ehas2026@gmail.com. Want it to send silently instead? See the README for a two-minute Formspree setup.</p>
+        <p class="form-status" id="formStatus" role="status"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ footer ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-left">
+      <img src="assets/qr-code.png" alt="QR code linking to cyberskell.com">
+      <p>Ethan Haskell<br>© <span id="year"></span> · cyberskell.com</p>
+    </div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#resume">Résumé</a>
+      <a href="#contact">Contact</a>
+      <a href="https://github.com/cyberskell/portfolio" target="_blank" rel="noopener">Source</a>
+    </nav>
+  </div>
+</footer>
+
+<!-- ============ chatbot ============ -->
+<button class="chat-launcher" id="chatLauncher" aria-label="Open chat assistant">
+  <span class="ping"></span>
+  <svg><use href="#icon-chat"/></svg>
+</button>
+
+<div class="chat-panel" id="chatPanel" role="dialog" aria-label="Chat with Ethan's assistant">
+  <div class="chat-head">
+    <div class="chat-head-title">
+      <span class="dot"></span>
+      <strong>Ask about Ethan</strong>
+    </div>
+    <button class="chat-close" id="chatClose" aria-label="Close chat"><svg width="18" height="18"><use href="#icon-close"/></svg></button>
+  </div>
+  <div class="chat-body" id="chatBody"></div>
+  <div class="chat-suggest" id="chatSuggest"></div>
+  <form class="chat-input-row" id="chatForm">
+    <input type="text" id="chatInput" placeholder="Ask about skills, projects, experience…" autocomplete="off">
+    <button type="submit" aria-label="Send"><svg><use href="#icon-send"/></svg></button>
+  </form>
+</div>
+
+<script src="js/chatbot.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
