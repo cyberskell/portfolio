@@ -18,7 +18,7 @@
     {
       id: "greeting",
       triggers: ["hello", "hi", "hey", "yo", "sup", "good morning", "good afternoon"],
-      answer: "Hey! I'm a small FAQ bot trained on Ethan's résumé. Ask me about his skills, projects, experience, education, or how to get in touch."
+      answer: "Hey! I'm a small FAQ bot trained on Ethan's resume. Ask me about his skills, projects, experience, education, or how to get in touch."
     },
     {
       id: "skills",
@@ -48,7 +48,7 @@
     {
       id: "education",
       triggers: ["education", "school", "university", "degree", "gpa", "bowie", "college", "major"],
-      answer: "Ethan is completing a B.S. in Computer Technology, concentration in Cybersecurity, at Bowie State University (expected Dec. 2026), GPA 3.2/4.0."
+      answer: "Ethan is completing a B.S. in Networking Infrastructure with a focus in Cybersecurity at Bowie State University (expected Dec. 2026), GPA 3.2/4.0."
     },
     {
       id: "certifications",
@@ -68,7 +68,7 @@
     {
       id: "resume",
       triggers: ["resume", "résumé", "cv", "download"],
-      answer: "You can view and download it in the <a href=\"#resume\">Résumé</a> section — both PDF and Word formats are available."
+      answer: "You can view and download it in the <a href=\"#resume\">Resume</a> section — both PDF and Word formats are available."
     },
     {
       id: "location",
@@ -77,7 +77,7 @@
     }
   ];
 
-  var FALLBACK = "I'm not sure about that one — I only know what's on Ethan's résumé. Try asking about his skills, projects, experience, education, or how to contact him.";
+  var FALLBACK = "I'm not sure about that one — I only know what's on Ethan's resume. Try asking about his skills, projects, experience, education, or how to contact him.";
 
   // Match triggers as whole words (allowing simple endings like "skills" or
   // "certs"), so a short trigger like "hi" doesn't fire inside "him".

@@ -10,14 +10,14 @@ it runs.
 ## What's here
 
 ```
-index.html            All page content and structure (Home, About, Projects, Résumé, Contact)
+index.html            All page content and structure (Home, About, Projects, Resume, Contact)
 css/style.css          Design system + component styles
 js/script.js           Navigation, scroll-spy, hero diagram animation, contact form
 js/chatbot.js          The FAQ chatbot (logic + UI)
 assets/qr-code.png      QR code linking to cyberskell.com
-assets/Ethan_Haskell_Resume.pdf   Downloadable / embeddable résumé
-assets/Ethan_Haskell_Resume.docx  Editable source of the résumé
-scripts/build_resume.js Node script that generates the résumé (docx) from scratch
+assets/Ethan_Haskell_Resume.pdf   Downloadable / embeddable resume
+assets/Ethan_Haskell_Resume.docx  Editable source of the resume
+scripts/build_resume.js Node script that generates the resume (docx) from scratch
 CNAME                  Tells GitHub Pages which custom domain to serve
 ```
 
@@ -37,7 +37,7 @@ goes down.
 
 1. A small knowledge base is a list of `{ triggers: [...], answer: "..." }`
    entries covering skills, projects, experience, education, certifications,
-   leadership, contact info, résumé, and location.
+   leadership, contact info, resume, and location.
 2. When a message comes in, it's lowercased and checked against every entry's
    trigger list. Each matching trigger adds to that entry's score (multi-word
    triggers score higher, so more specific matches win over generic ones).
@@ -51,7 +51,7 @@ free and dependency-free.
 
 **Want a smarter, LLM-powered version later?** The swap is small: replace the
 body of `getAnswer()` in `js/chatbot.js` with a `fetch()` call to whatever API
-you're using, passing the résumé content as
+you're using, passing the resume content as
 context. Everything else — the UI, the suggestion chips, the message
 rendering — stays the same.
 
@@ -65,21 +65,21 @@ rendering — stays the same.
 - **Site copy:** all text lives directly in `index.html` — no CMS, no data
   file, just edit the HTML.
 - **Chatbot answers:** edit the `KB` array at the top of `js/chatbot.js`.
-- **After changing CSS or JS:** bump the `?v=` number on the stylesheet and
+- **After changing CSS, JS or the resume files:** bump the `?v=` number on the stylesheet and
   script tags in `index.html` (e.g. `?v=20261010` → `?v=20261115`). Otherwise
   visitors' browsers may keep using the old cached file.
-- **Project links:** the self-hosted web server links to
-  `github.com/cyberskell/cyberskell-web-dns-server`. The home lab and Pi
-  cluster cards still point to the profile (`github.com/cyberskell`) as a
-  placeholder — swap in their specific repo URLs once pushed (search
-  `index.html` for `proj-link`).
+- **Project links:** only the self-hosted web server links to a repo
+  (`github.com/cyberskell/cyberskell-web-dns-server`). The other cards show
+  a plain label instead of a link. If you publish a repo for one of them later,
+  swap its label for a "View on GitHub" link like the web server card has
+  (search `index.html` for `proj-link`).
 
 ## Keeping this resume current
 
 This is meant to be a living document, tailored per job application rather
 than rewritten from scratch each time:
 
-- **Master content** lives in `scripts/build_resume.js` (the résumé) and
+- **Master content** lives in `scripts/build_resume.js` (the resume) and
   directly in `index.html` (the site). There's no separate data file — the
   script's sequence of `skillLine(...)` / `bullet(...)` / `roleHeader(...)`
   calls *is* the content, in the order it prints.
@@ -87,7 +87,7 @@ than rewritten from scratch each time:
   `subLine(...)` + `bullet(...)` block under "Work Experience" in
   `build_resume.js` (most recent first), and a matching card in the `proj-grid`
   in `index.html`. Re-run the build steps above afterward.
-- **Swapping résumé projects:** every project lives in the `PROJECTS` library
+- **Swapping resume projects:** every project lives in the `PROJECTS` library
   near the top of `scripts/build_resume.js` (`homelab`, `wireguard`,
   `webserver`, `azure`, `hpc`). Change `SELECTED_PROJECTS` to pick which
   ones print and in what order, then rebuild. The website always shows all

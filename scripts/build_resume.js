@@ -102,7 +102,7 @@ function subLine(text) {
 
 // ---------------------------------------------------------------------------
 // PROJECT LIBRARY
-// Every project lives here. To tailor the résumé for a job posting, change
+// Every project lives here. To tailor the resume for a job posting, change
 // SELECTED_PROJECTS below (order = print order). Projects not selected stay in
 // the library for next time and still appear on the website.
 // ---------------------------------------------------------------------------
@@ -146,7 +146,7 @@ const PROJECTS = {
   },
 };
 
-// Projects printed on the résumé, in order.
+// Projects printed on the resume, in order.
 const SELECTED_PROJECTS = ["homelab", "webserver", "azure"];
 
 function projectBlocks(ids) {
@@ -245,13 +245,13 @@ const doc = new Document({
         new Paragraph({
           spacing: { after: 40 },
           children: [new TextRun({
-            text: "Cybersecurity student at Bowie State University with hands-on experience across enterprise network administration, workstation support, and self-hosted server environments, currently working to complete the CompTIA Network+ and Security+ certifications. Experienced working directly with non-technical staff and end users to resolve issues and document solutions through IT internships with the Supreme Court of the United States and the City of Baltimore. Eagle Scout known for reliability, professionalism, and clear communication.",
+            text: "Networking infrastructure student with a focus in cybersecurity at Bowie State University, with hands-on experience in enterprise network administration, workstation support, and self-hosted servers; pursuing CompTIA Network+ and Security+. Experienced resolving issues for non-technical staff and end users through IT internships with the Supreme Court of the United States and the City of Baltimore. Eagle Scout known for reliability, professionalism, and clear communication.",
             size: 17, color: "23262B", font: FONT_BODY,
           })],
         }),
 
         sectionHeading("Education"),
-        roleHeader("B.S. Computer Technology in Cybersecurity — Bowie State University, Maryland", "Expected Dec. 2026"),
+        roleHeader("B.S. Networking Infrastructure, Focus in Cybersecurity — Bowie State University", "Expected Dec. 2026"),
         subLine("GPA: 3.2 / 4.0"),
         skillLine("Relevant Coursework:", "Client Operating Systems, Windows Server Administration, PC Architecture, Computer Networking, Foundations of Computer and Network Security, Internet Technology, Database Development"),
         skillLine("Certifications:", "CompTIA Network+ and Security+ — in progress"),
@@ -271,8 +271,7 @@ const doc = new Document({
         subLine("Supreme Court of the United States"),
         bullet("Supported both the Network Administration Group (NAG) and Workstation Administration Group (WAG), gaining hands-on exposure to enterprise networking environments, system monitoring, hardware deployments, and end-user technical support."),
         bullet("Split time between proactive network monitoring and operational tasks within NAG — including switch and router configuration and troubleshooting using network monitoring tools — and direct, user-facing technical support within WAG."),
-        bullet("Tracked and resolved issues through IT ticketing systems, following documentation standards for hardware deployments and support requests."),
-        bullet("Applied customer service best practices while balancing network administration duties with hands-on workstation support."),
+        bullet("Tracked and resolved issues through IT ticketing systems, applying customer service best practices and following documentation standards for hardware deployments and support requests."),
 
         roleHeader("Full-Stack Database & Software Development Intern", "May 2025 – Aug. 2025"),
         subLine("Baltimore City Fellows Internship — City of Baltimore, Office of the Comptroller"),
