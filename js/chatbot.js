@@ -53,7 +53,7 @@
     {
       id: "certifications",
       triggers: ["certification", "cert", "comptia", "network+", "security+", "ccna", "cisco"],
-      answer: "He's currently working toward CompTIA Network+ and Security+ certifications."
+      answer: "Ethan is working toward the Cisco Certified Network Associate (CCNA), with a target of January 2027, and is also pursuing CompTIA Network+ and Security+."
     },
     {
       id: "leadership",

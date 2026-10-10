@@ -245,7 +245,7 @@ const doc = new Document({
         new Paragraph({
           spacing: { after: 40 },
           children: [new TextRun({
-            text: "Networking infrastructure student with a focus in cybersecurity at Bowie State University, with hands-on experience in enterprise network administration, workstation support, and self-hosted servers; pursuing CompTIA Network+ and Security+. Experienced resolving issues for non-technical staff and end users through IT internships with the Supreme Court of the United States and the City of Baltimore. Eagle Scout known for reliability, professionalism, and clear communication.",
+            text: "Networking infrastructure student with a focus in cybersecurity at Bowie State University, with hands-on experience in enterprise network administration, workstation support, and self-hosted servers; pursuing the Cisco CCNA (target Jan. 2027) and CompTIA Network+ and Security+. Experienced resolving issues for non-technical staff and end users through IT internships with the Supreme Court of the United States and the City of Baltimore. Eagle Scout known for reliability, professionalism, and clear communication.",
             size: 17, color: "23262B", font: FONT_BODY,
           })],
         }),
@@ -254,7 +254,7 @@ const doc = new Document({
         roleHeader("B.S. Networking Infrastructure, Focus in Cybersecurity — Bowie State University", "Expected Dec. 2026"),
         subLine("GPA: 3.2 / 4.0"),
         skillLine("Relevant Coursework:", "Client Operating Systems, Windows Server Administration, PC Architecture, Computer Networking, Foundations of Computer and Network Security, Internet Technology, Database Development"),
-        skillLine("Certifications:", "CompTIA Network+ and Security+ — in progress"),
+        skillLine("Certifications:", "Cisco Certified Network Associate (CCNA) — target Jan. 2027  |  CompTIA Network+ and Security+ — in progress"),
 
         sectionHeading("Skills"),
         skillLine("Systems & Support:", "Windows, Windows Server, Linux (Ubuntu), Active Directory administration, account and access management, hardware/software troubleshooting, PC architecture, system maintenance and updates"),
