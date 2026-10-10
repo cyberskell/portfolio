@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css?v=20261010b">
 </head>
 <body>
 
@@ -186,11 +186,11 @@
         <div class="spec-grid">
           <div class="spec-plate">
             <h4>Systems &amp; support</h4>
-            <p>Windows, Windows Server, Linux (Ubuntu), Active Directory administration, account &amp; access management, hardware/software troubleshooting, PC architecture, system maintenance.</p>
+            <p>Windows, Windows Server 2022, Linux (Ubuntu), Active Directory, Group Policy, AD CS (PKI), NPS/RADIUS, Microsoft Entra ID, account &amp; access management, hardware/software troubleshooting, system maintenance.</p>
           </div>
           <div class="spec-plate">
             <h4>Virtualization &amp; cloud</h4>
-            <p>Proxmox, Docker, VMware, VirtualBox, Azure.</p>
+            <p>Proxmox, Docker, VMware, VirtualBox, Microsoft Azure (VNet, NSG, NAT Gateway, VMs, Azure Files &amp; File Sync, Backup, Site Recovery, Azure CLI).</p>
           </div>
           <div class="spec-plate">
             <h4>Networking</h4>
@@ -225,7 +225,7 @@
   <div class="wrap">
     <div class="section-head">
       <h2>Selected work</h2>
-      <p>Infrastructure I've built and maintained, plus a full-stack project delivered for a real client.</p>
+      <p>Enterprise IT work, cloud and identity labs, and infrastructure I've built and maintained at home.</p>
     </div>
 
     <div class="proj-grid">
@@ -245,6 +245,24 @@
       </article>
 
       <article class="proj-card">
+        <div class="proj-top"><h3>Hybrid identity, cloud infrastructure &amp; disaster recovery lab</h3></div>
+        <div class="proj-tags">
+          <span class="tag">Microsoft Azure</span><span class="tag">Windows Server 2022</span><span class="tag">Active Directory</span><span class="tag">Entra ID</span><span class="tag">PKI</span><span class="tag">RADIUS</span>
+        </div>
+        <ul>
+          <li>Designed a segmented Azure virtual network (10.66.0.0/16) with an IP-restricted jumpbox, a private domain controller, and a NAT Gateway, administering private servers through a two-hop RDP chain.</li>
+          <li>Built an Active Directory forest (AD DS, DNS, OUs, security groups), joined Azure VMs to the domain, and synced on-premises users to Microsoft Entra ID with Entra Connect and Password Hash Sync.</li>
+          <li>Built an AD CS Enterprise Root CA with Group Policy auto-enrollment, and NPS/RADIUS with EAP-TLS, verified end to end with a RADIUS test client and NPS audit logs.</li>
+          <li>Configured Azure File Sync with cloud tiering, verifying a 200 MB file tiered to 0 bytes on disk and recalled on access, and restored files from share snapshots.</li>
+          <li>Implemented Azure Backup and Azure Site Recovery, running a cross-region test failover that confirmed data integrity and role availability.</li>
+          <li>Worked around Azure for Students limits (Azure Policy region allow-list, SKU restrictions, zero vCPU quotas) using Azure CLI to find deployable VM sizes and regions.</li>
+        </ul>
+        <span class="proj-link" style="border-top:1px solid var(--line); opacity:.7; cursor:default;">
+          CTEC405 Cloud Computing project series, Bowie State University
+        </span>
+      </article>
+
+      <article class="proj-card">
         <div class="proj-top"><h3>Personal home lab</h3></div>
         <div class="proj-tags">
           <span class="tag">Proxmox</span><span class="tag">Docker</span><span class="tag">WireGuard</span><span class="tag">DNS</span>
@@ -256,6 +274,22 @@
         <a class="proj-link" href="https://github.com/cyberskell" target="_blank" rel="noopener">
           <svg width="15" height="15"><use href="#icon-code"/></svg> View on GitHub
         </a>
+      </article>
+
+      <article class="proj-card">
+        <div class="proj-top"><h3>Self-hosted WireGuard VPN for remote Proxmox access</h3></div>
+        <div class="proj-tags">
+          <span class="tag">WireGuard</span><span class="tag">Proxmox VE</span><span class="tag">iptables</span><span class="tag">Port Forwarding</span>
+        </div>
+        <ul>
+          <li>Deployed a WireGuard VPN server on a Proxmox VE host for encrypted remote access to the hypervisor's management interface from outside the home network.</li>
+          <li>Configured a dedicated VPN subnet (10.10.10.0/24), key-based peer authentication, IP forwarding, and iptables NAT/masquerade rules.</li>
+          <li>Set up UDP port forwarding and firewall rules on a Verizon router to expose only the VPN endpoint, never the Proxmox web UI; tested a Windows client over a mobile hotspot.</li>
+          <li>Resolved a Wintun virtual adapter error and mismatched peer public keys using handshake status, client logs, and key verification.</li>
+        </ul>
+        <span class="proj-link" style="border-top:1px solid var(--line); opacity:.7; cursor:default;">
+          Home lab project
+        </span>
       </article>
 
       <article class="proj-card">
@@ -415,7 +449,7 @@
   </form>
 </div>
 
-<script src="js/chatbot.js"></script>
-<script src="js/script.js"></script>
+<script src="js/chatbot.js?v=20261010b"></script>
+<script src="js/script.js?v=20261010b"></script>
 </body>
 </html>

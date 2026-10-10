@@ -23,12 +23,22 @@
     {
       id: "skills",
       triggers: ["skill", "tech stack", "technologies", "what do you know", "stack", "languages", "programming", "know how to", "monitoring tool", "ticketing", "switch", "router"],
-      answer: "Ethan's core areas: systems &amp; support (Windows, Windows Server, Linux, Active Directory), virtualization &amp; cloud (Proxmox, Docker, VMware, VirtualBox, Azure), networking (TCP/IP, DNS, DHCP, WireGuard VPN, switch &amp; router configuration, firewalls, network monitoring tools), IT ticketing/helpdesk systems, and tools like Git, Python, SQL, and Java. See the <a href=\"#about\">About</a> section for the full breakdown."
+      answer: "Ethan's core areas: systems &amp; support (Windows, Windows Server 2022, Linux, Active Directory, Group Policy, AD CS, NPS/RADIUS, Entra ID), virtualization &amp; cloud (Proxmox, Docker, VMware, VirtualBox, Microsoft Azure), networking (TCP/IP, DNS, DHCP, WireGuard VPN, switch &amp; router configuration, firewalls, network monitoring tools), IT ticketing/helpdesk systems, and tools like Git, Python, SQL, and Java. See the <a href=\"#about\">About</a> section for the full breakdown."
     },
     {
       id: "projects",
       triggers: ["project", "built", "portfolio work", "home lab", "homelab", "cluster", "raspberry pi", "server"],
-      answer: "A few highlights: a self-hosted Proxmox home lab running Docker services with a WireGuard VPN and personal DNS server, a self-hosted Ubuntu web server running Apache, and a 6-node Raspberry Pi cluster emulating an HPC system. Full details are in <a href=\"#projects\">Projects</a>."
+      answer: "A few highlights: a hybrid identity and disaster recovery lab in Microsoft Azure, a self-hosted WireGuard VPN for remote Proxmox access, a Proxmox home lab running Docker services and a personal DNS server, a self-hosted Ubuntu/Apache web server, and a 6-node Raspberry Pi cluster emulating an HPC system. Full details are in <a href=\"#projects\">Projects</a>."
+    },
+    {
+      id: "azure",
+      triggers: ["azure", "cloud", "entra", "active directory", "domain controller", "pki", "certificate", "radius", "nps", "site recovery", "backup", "disaster recovery", "file sync", "hybrid"],
+      answer: "In his Azure cloud lab (CTEC405, Bowie State), Ethan built a segmented Azure network with a jumpbox and private domain controller, an Active Directory forest synced to Microsoft Entra ID, a PKI with AD CS and Group Policy auto-enrollment, NPS/RADIUS with EAP-TLS, Azure File Sync with cloud tiering, and Azure Backup plus a cross-region Site Recovery test failover. See <a href=\"#projects\">Projects</a>."
+    },
+    {
+      id: "vpn",
+      triggers: ["vpn", "wireguard", "remote access", "proxmox", "port forward", "iptables"],
+      answer: "Ethan runs a self-hosted WireGuard VPN on his Proxmox host: a dedicated 10.10.10.0/24 VPN subnet, key-based peer authentication, iptables NAT rules, and router port forwarding that exposes only the VPN endpoint, not the Proxmox web UI. He debugged it through handshake status and logs, fixing a Wintun adapter error and mismatched peer keys."
     },
     {
       id: "experience",
@@ -69,10 +79,19 @@
 
   var FALLBACK = "I'm not sure about that one — I only know what's on Ethan's résumé. Try asking about his skills, projects, experience, education, or how to contact him.";
 
+  // Match triggers as whole words (allowing simple endings like "skills" or
+  // "certs"), so a short trigger like "hi" doesn't fire inside "him".
+  function triggerMatches(t, msg) {
+    var escaped = t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    var endings = t.length > 3 ? "(s|es|ed|ing)?" : "";
+    var re = new RegExp("(^|[^a-z0-9])" + escaped + endings + "([^a-z0-9]|$)");
+    return re.test(msg);
+  }
+
   function scoreEntry(entry, msg) {
     var score = 0;
     entry.triggers.forEach(function (t) {
-      if (msg.indexOf(t) !== -1) score += t.split(" ").length; // multi-word matches count more
+      if (triggerMatches(t, msg)) score += t.split(" ").length; // multi-word matches count more
     });
     return score;
   }

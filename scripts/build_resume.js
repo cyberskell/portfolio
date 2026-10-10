@@ -100,7 +100,70 @@ function subLine(text) {
   });
 }
 
+// ---------------------------------------------------------------------------
+// PROJECT LIBRARY
+// Every project lives here. To tailor the résumé for a job posting, change
+// SELECTED_PROJECTS below (order = print order). Projects not selected stay in
+// the library for next time and still appear on the website.
+// ---------------------------------------------------------------------------
+const PROJECTS = {
+  homelab: {
+    title: "Personal Home Lab — System Administration & Troubleshooting",
+    bullets: [
+      "Built and maintain a multi-service server environment on Proxmox, deploying and supporting Docker-containerized applications (media server, game server) — including installs, updates, backups, and diagnosing service outages.",
+      "Run a personal DNS server to monitor incoming network traffic and block unwanted applications at the network level, backed by custom firewall rules.",
+    ],
+  },
+  wireguard: {
+    title: "Self-Hosted WireGuard VPN for Remote Proxmox Access | Home Lab",
+    bullets: [
+      "Deployed a WireGuard VPN server on a Proxmox VE host for encrypted remote access to the hypervisor's management interface, with a dedicated VPN subnet (10.10.10.0/24), key-based peer authentication, IP forwarding, and iptables NAT/masquerade rules.",
+      "Configured UDP port forwarding and firewall rules on a Verizon router to expose only the VPN endpoint rather than the Proxmox web UI; set up a Windows WireGuard client and tested remote connectivity over a mobile hotspot.",
+      "Troubleshot connection failures using handshake status, client logs, and key verification, resolving a Wintun virtual adapter error and mismatched public keys between peers.",
+    ],
+  },
+  webserver: {
+    title: "Self-Hosted Web Server (github.com/cyberskell/cyberskell-web-dns-server)",
+    bullets: [
+      "Deployed an Ubuntu Server running the Apache HTTP Server, configured with a custom domain and IP-based access control to restrict incoming connections.",
+      "Set up Apache virtual hosts and DNS routing, then hardened the server against unauthorized access with firewall rules on top of Apache's own access controls; perform ongoing maintenance and patching.",
+    ],
+  },
+  azure: {
+    title: "Hybrid Identity, Cloud Infrastructure & Disaster Recovery Lab | Azure, Windows Server 2022, AD",
+    bullets: [
+      "Designed a segmented Azure network with an IP-restricted jumpbox, private domain controller, and NAT Gateway; built an AD forest, joined VMs to the domain, and synced users to Microsoft Entra ID with Entra Connect.",
+      "Built an AD CS Enterprise Root CA with Group Policy auto-enrollment and NPS/RADIUS with EAP-TLS, verified end to end in NPS audit logs; configured Azure File Sync with cloud tiering.",
+      "Implemented Azure Backup and Azure Site Recovery with a cross-region test failover; resolved Azure Policy, SKU, and quota blockers with Azure CLI.",
+    ],
+  },
+  hpc: {
+    title: "Mock Supercomputer / Virtual Cluster Build",
+    bullets: [
+      "Built a 6-node Raspberry Pi cluster wired over a dedicated switch, configured to emulate a small HPC environment with static IP addressing and SSH-based cluster management.",
+      "Diagnosed connectivity and configuration issues across the networked systems, from physical cabling to service-level configuration.",
+    ],
+  },
+};
+
+// Projects printed on the résumé, in order.
+const SELECTED_PROJECTS = ["homelab", "webserver", "azure"];
+
+function projectBlocks(ids) {
+  const out = [];
+  ids.forEach((id) => {
+    const p = PROJECTS[id];
+    if (!p) throw new Error("Unknown project id: " + id);
+    out.push(roleHeader(p.title, ""));
+    p.bullets.forEach((b) => out.push(bullet(b)));
+  });
+  return out;
+}
+
 const doc = new Document({
+  creator: "Ethan Haskell",
+  lastModifiedBy: "Ethan Haskell",
+  title: "Ethan Haskell — Resume",
   sections: [
     {
       properties: {
@@ -201,15 +264,7 @@ const doc = new Document({
         skillLine("Professional:", "Customer support & service-desk best practices, technical documentation, cross-team collaboration, issue escalation and follow-through"),
 
         sectionHeading("Technical Projects"),
-        roleHeader("Personal Home Lab — System Administration & Troubleshooting", ""),
-        bullet("Built and maintain a multi-service server environment on Proxmox, deploying and supporting Docker-containerized applications (media server, game server) — including installs, updates, backups, and diagnosing service outages."),
-        bullet("Run a personal DNS server to monitor incoming network traffic and block unwanted applications at the network level; configured firewall rules and secure remote access via WireGuard VPN."),
-        roleHeader("Self-Hosted Web Server (github.com/cyberskell/cyberskell-web-dns-server)", ""),
-        bullet("Deployed an Ubuntu Server running the Apache HTTP Server, configured with a custom domain and IP-based access control to restrict incoming connections."),
-        bullet("Set up Apache virtual hosts and DNS routing, then hardened the server against unauthorized access with firewall rules on top of Apache's own access controls; perform ongoing maintenance and patching."),
-        roleHeader("Mock Supercomputer / Virtual Cluster Build", ""),
-        bullet("Built a 6-node Raspberry Pi cluster wired over a dedicated switch, configured to emulate a small HPC environment with static IP addressing and SSH-based cluster management."),
-        bullet("Diagnosed connectivity and configuration issues across the networked systems, from physical cabling to service-level configuration."),
+        ...projectBlocks(SELECTED_PROJECTS),
 
         sectionHeading("Work Experience"),
         roleHeader("IT Operations Intern — Network Administration & Workstation Administration Groups", "Sept. 2026 – Jan. 2027"),

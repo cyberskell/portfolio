@@ -51,7 +51,7 @@ free and dependency-free.
 
 **Want a smarter, LLM-powered version later?** The swap is small: replace the
 body of `getAnswer()` in `js/chatbot.js` with a `fetch()` call to whatever API
-you're using (for example, the Anthropic API), passing the résumé content as
+you're using, passing the résumé content as
 context. Everything else — the UI, the suggestion chips, the message
 rendering — stays the same.
 
@@ -65,6 +65,9 @@ rendering — stays the same.
 - **Site copy:** all text lives directly in `index.html` — no CMS, no data
   file, just edit the HTML.
 - **Chatbot answers:** edit the `KB` array at the top of `js/chatbot.js`.
+- **After changing CSS or JS:** bump the `?v=` number on the stylesheet and
+  script tags in `index.html` (e.g. `?v=20261010` → `?v=20261115`). Otherwise
+  visitors' browsers may keep using the old cached file.
 - **Project links:** the self-hosted web server links to
   `github.com/cyberskell/cyberskell-web-dns-server`. The home lab and Pi
   cluster cards still point to the profile (`github.com/cyberskell`) as a
@@ -84,6 +87,11 @@ than rewritten from scratch each time:
   `subLine(...)` + `bullet(...)` block under "Work Experience" in
   `build_resume.js` (most recent first), and a matching card in the `proj-grid`
   in `index.html`. Re-run the build steps above afterward.
+- **Swapping résumé projects:** every project lives in the `PROJECTS` library
+  near the top of `scripts/build_resume.js` (`homelab`, `wireguard`,
+  `webserver`, `azure`, `hpc`). Change `SELECTED_PROJECTS` to pick which
+  ones print and in what order, then rebuild. The website always shows all
+  of them. Three projects is about the limit for one page.
 - **Tailoring to a specific posting:** when applying somewhere, the highest-
   leverage edits are (1) the order of the `skillLine(...)` entries — put the
   categories the posting cares about first, (2) which 2–3 project/experience
