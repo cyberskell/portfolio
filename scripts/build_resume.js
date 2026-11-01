@@ -259,8 +259,8 @@ const doc = new Document({
         sectionHeading("Skills"),
         skillLine("Systems & Support:", "Windows, Windows Server, Linux (Ubuntu), Active Directory administration, account and access management, hardware/software troubleshooting, PC architecture, system maintenance and updates"),
         skillLine("Virtualization & Cloud:", "Proxmox, Docker, VMware, VirtualBox, Azure"),
-        skillLine("Networking:", "TCP/IP, DNS, DHCP, VPN (WireGuard), switch and router configuration, firewall configuration, network monitoring tools, wireless networking, connectivity troubleshooting"),
-        skillLine("Tools & Productivity:", "Microsoft Excel, Power BI, Git, command-line utilities, Python, SQL, Java, IT ticketing/helpdesk systems"),
+        skillLine("Networking:", "TCP/IP, DNS, DHCP, VPN (WireGuard), switch and router configuration, firewall configuration, network monitoring (SolarWinds), wireless networking, connectivity troubleshooting"),
+        skillLine("Tools & Productivity:", "Microsoft Excel, Power BI, Git, command-line utilities, Python, SQL, Java, IT ticketing/helpdesk systems, Cisco Jabber, Webex"),
         skillLine("Professional:", "Customer support & service-desk best practices, technical documentation, cross-team collaboration, issue escalation and follow-through"),
 
         sectionHeading("Technical Projects"),

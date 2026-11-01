@@ -22,8 +22,8 @@
     },
     {
       id: "skills",
-      triggers: ["skill", "tech stack", "technologies", "what do you know", "stack", "languages", "programming", "know how to", "monitoring tool", "ticketing", "switch", "router"],
-      answer: "Ethan's core areas: systems &amp; support (Windows, Windows Server 2022, Linux, Active Directory, Group Policy, AD CS, NPS/RADIUS, Entra ID), virtualization &amp; cloud (Proxmox, Docker, VMware, VirtualBox, Microsoft Azure), networking (TCP/IP, DNS, DHCP, WireGuard VPN, switch &amp; router configuration, firewalls, network monitoring tools), IT ticketing/helpdesk systems, and tools like Git, Python, SQL, and Java. See the <a href=\"#about\">About</a> section for the full breakdown."
+      triggers: ["skill", "tech stack", "technologies", "what do you know", "stack", "languages", "programming", "know how to", "monitoring tool", "monitoring", "solarwinds", "solar winds", "jabber", "webex", "ticketing", "switch", "router"],
+      answer: "Ethan's core areas: systems &amp; support (Windows, Windows Server 2022, Linux, Active Directory, Group Policy, AD CS, NPS/RADIUS, Entra ID), virtualization &amp; cloud (Proxmox, Docker, VMware, VirtualBox, Microsoft Azure), networking (TCP/IP, DNS, DHCP, WireGuard VPN, switch &amp; router configuration, firewalls, network monitoring with SolarWinds), IT ticketing/helpdesk systems, Cisco Jabber and Webex, and tools like Git, Python, SQL, and Java. See the <a href=\"#about\">About</a> section for the full breakdown."
     },
     {
       id: "projects",
