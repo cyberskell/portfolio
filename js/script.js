@@ -41,28 +41,6 @@
   window.addEventListener("scroll", onScrollSpy, { passive: true });
   onScrollSpy();
 
-  /* ---------- hero network diagram: draw-in animation ---------- */
-  function animateTopology() {
-    var links = document.querySelectorAll(".topo .link");
-    links.forEach(function (path, i) {
-      var len = path.getTotalLength();
-      path.style.strokeDasharray = len;
-      path.style.strokeDashoffset = len;
-      // force reflow so the browser registers the starting state before transitioning
-      path.getBoundingClientRect();
-      setTimeout(function () {
-        path.style.strokeDashoffset = "0";
-      }, 120 + i * 160);
-    });
-  }
-  if (document.querySelector(".topo")) {
-    if (document.readyState === "complete") {
-      animateTopology();
-    } else {
-      window.addEventListener("load", animateTopology);
-    }
-  }
-
   /* ---------- contact form (static-site friendly mailto fallback) ---------- */
   var form = document.getElementById("contactForm");
   var status = document.getElementById("formStatus");

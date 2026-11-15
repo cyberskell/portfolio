@@ -2,7 +2,7 @@
    Ethan Haskell — Portfolio
    Design concept: network schematic / blueprint.
    A systems & networking student's actual working material —
-   topology diagrams, spec plates, signal-lamp amber — used as
+   spec plates and signal-lamp amber — used as
    the visual language, rather than generic SaaS chrome.
    ========================================================= */
 
@@ -273,36 +273,19 @@ section { position: relative; padding: 108px 0; }
   color: var(--slate-400);
 }
 
-.topo { width: 100%; height: auto; }
-.topo .link {
-  fill: none;
-  stroke: var(--line-strong);
-  stroke-width: 1.5;
-  transition: stroke-dashoffset 0.9s ease;
+.hero-photo {
+  margin: 0;
+  justify-self: end;
+  width: 100%;
+  max-width: 460px;
 }
-.topo .node-box {
-  fill: var(--navy-800);
-  stroke: var(--line-strong);
-  stroke-width: 1;
+.hero-photo img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line-strong);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
 }
-.topo .node-group {
-  opacity: 0;
-  animation: fadeUp 0.5s ease forwards;
-}
-.topo .node-icon { stroke: var(--amber-bright); }
-.topo .node-label {
-  font-family: var(--font-mono);
-  font-size: 10.5px;
-  fill: var(--slate-300);
-}
-.topo .pulse {
-  fill: var(--amber);
-  opacity: 0;
-  animation: pulse 2.4s ease-in-out infinite;
-}
-@keyframes draw { to { stroke-dashoffset: 0; } }
-@keyframes fadeUp { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes pulse { 0%, 100% { opacity: 0; } 50% { opacity: 0.9; } }
 
 /* ---------------------------- about ---------------------------- */
 .about-grid {
@@ -461,10 +444,22 @@ section { position: relative; padding: 108px 0; }
   gap: 56px;
 }
 .contact-info h3 { color: var(--white); font-size: 1.1rem; margin-bottom: 14px; }
-.contact-list { list-style: none; margin: 0 0 30px; padding: 0; display: grid; gap: 14px; }
-.contact-list a, .contact-list span { font-size: 0.96rem; color: var(--slate-300); display: flex; gap: 12px; align-items: center; }
+.contact-list { list-style: none; margin: 0 0 30px; padding: 0; border-top: 1px solid var(--line); }
+.contact-list li {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  align-items: baseline;
+  gap: 12px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--line);
+}
+.contact-label {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  color: var(--slate-400);
+}
+.contact-list a { font-size: 0.96rem; color: var(--slate-300); overflow-wrap: anywhere; }
 .contact-list a:hover { color: var(--amber-bright); }
-.contact-list svg { width: 17px; height: 17px; color: var(--amber); flex-shrink: 0; }
 
 .field { margin-bottom: 18px; }
 .field label {
@@ -650,7 +645,7 @@ footer nav a:hover { color: var(--amber-bright); }
 @media (max-width: 900px) {
   .hero .wrap { grid-template-columns: 1fr; }
   .hero { padding-top: 128px; }
-  .topo { max-width: 420px; margin: 0 auto; }
+  .hero-photo { justify-self: start; max-width: 360px; }
   .about-grid { grid-template-columns: 1fr; gap: 40px; }
   .spec-grid { grid-template-columns: 1fr 1fr; }
   .leader-strip { grid-template-columns: 1fr; }
