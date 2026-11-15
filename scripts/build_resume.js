@@ -12,8 +12,8 @@ const SLATE = "3D4C61";
 const AMBER = "B4741E";
 const LIGHT = "6B7686";
 
-const FONT_HEAD = "IBM Plex Sans";
-const FONT_BODY = "IBM Plex Sans";
+const FONT_HEAD = "Calibri";
+const FONT_BODY = "Calibri";
 
 function hr() {
   return new Paragraph({
